@@ -9,8 +9,6 @@ class Buku extends Model
     protected $fillable = [
         'judul',
         'penulis',
-        'penerbit',
-        'tahun',
         'stok',
         'foto',
         'kategori_id', // ✅ tambah ini

@@ -16,7 +16,7 @@ class BukuController extends Controller
         $buku = Buku::with('kategori')
             ->when($keyword, function ($query) use ($keyword) {
                 $query->where('judul', 'like', "%$keyword%")
-                      ->orWhere('penulis', 'like', "%$keyword%"); // ✅ fix
+                      ->orWhere('penulis', 'like', "%$keyword%"); 
             })
             ->get();
 
@@ -48,8 +48,8 @@ class BukuController extends Controller
         Buku::create([
     'judul' => $request->judul,
     'penulis' => $request->penulis,
-    'penerbit' => $request->penerbit,
-    'tahun' => $request->tahun,
+    // 'penerbit' => $request->penerbit,
+    // 'tahun' => $request->tahun,
     'stok' => $request->stok,
     'foto' => $fotoName,
     'kategori_id' => $request->kategori_id, // ✅ tambah ini

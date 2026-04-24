@@ -61,7 +61,9 @@
                                     </button>
                                 </form>
                             @else
-                                <span>Sudah dikembalikan</span>
+                                        <form action="{{ route('user.peminjaman.kembali', $pinjam->id) }}" method="POST">
+                      
+                    
                             @endif
                         </td>
                     </tr>
